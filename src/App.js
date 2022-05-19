@@ -1,23 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
+import Header from './components/Header';
+import Products from './components/Products';
+
+const dropdownItems = [
+  {
+    name:'newest',
+    label: 'Newest'
+  },
+  {
+    name:'featured',
+    label: 'Featured'
+  },
+  {
+    name:'lowToHigh',
+    label: 'Price (Low - High)'
+  },
+  {
+    name:'highToLow',
+    label: 'Price (High - Low)'
+  },
+]
 
 function App() {
+  const [ selected, setSelected ] = useState(dropdownItems[0])
+  const [ products, setProducts ] = useState([])
+  const [ sortedProducts, setSortedProducts ] = useState(products);
+
+  const getData = () => {
+    fetch('/api/fakeData.json').then(async (resp) => {
+      let data = await resp.json()
+      setProducts(data.products)
+    })
+    .catch(err=>{
+      console.log("fetch", err)
+    })
+  }
+
+  useEffect(() => {
+    getData()
+  },[])
+
+  useEffect(()=>{
+    setSortedProducts(products)
+  },[products])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header
+        selected={selected}
+        setSelected={setSelected}
+        products={products}
+        setSortedProducts={setSortedProducts}
+        dropdownItems={dropdownItems}
+      />
+      <Products 
+        sortedProducts={sortedProducts}
+      />
     </div>
   );
 }

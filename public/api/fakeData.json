@@ -1,0 +1,70 @@
+{
+    "products":[
+        {
+            "title": "Nike Dunk Low",
+            "price": 10955,
+            "added": "05/11/2022",
+            "featured": false
+        },
+        {
+            "title": "Air Jordan",
+            "price": 12495,
+            "added": "04/11/2022",
+            "featured": false
+        },
+        {
+            "title": "Nike Air Presto",
+            "price": 13955,
+            "added": "05/15/2022",
+            "featured": false
+        },
+        {
+            "title": "Nike Air Force",
+            "price": 9955,
+            "added": "03/14/2022",
+            "featured": true
+        },
+        {
+            "title": "Nike Blazer",
+            "price": 15955,
+            "added": "05/11/2022",
+            "featured": true
+        },
+        {
+            "title": "Nike ZoomX",
+            "price": 19695,
+            "added": "05/12/2022",
+            "featured": true
+        },
+        {
+            "title": "Nike Go FlyEase",
+            "price": 10295,
+            "added": "02/11/2022",
+            "featured": false
+        },
+        {
+            "title": "Nike Waffle Debut",
+            "price": 5695,
+            "added": "05/12/2022",
+            "featured": true
+        },
+        {
+            "title": "Nike Metcon 7",
+            "price": 9197,
+            "added": "04/21/2022",
+            "featured": false
+        },
+        {
+            "title": "Nike SB Bruin",
+            "price": 8295,
+            "added": "12/11/2021",
+            "featured": true
+        },
+        {
+            "title": "Nike AlphaFly",
+            "price": 25895,
+            "added": "03/25/2022",
+            "featured": false
+        }
+    ]
+}
